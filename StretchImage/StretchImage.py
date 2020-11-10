@@ -34,17 +34,18 @@ windowSurface.blit(loadedImage,(0,0)) # we use coordinates 0,0 (top left) becaus
 pygame.display.update()
 
 def quitElegantly():
-	pygame.quit()
-	sys.exit()
+    # you could do things like saves here
+    pygame.quit()
+    sys.exit()
 
 # run the game loop
 while True:
-	for event in pygame.event.get():
-		if event.type == QUIT: # like control-break in the console, or the cross in the top right corner of the window
-			quitElegantly()
-		elif event.type== KEYDOWN:
-			mods=pygame.key.get_mods()
-			if event.key== K_ESCAPE: # also quit on escape
-				quitElegantly()
-			elif (mods & KMOD_LALT or mods & KMOD_RALT) and event.key==K_F4:  #also quit on alt-f4
-				quitElegantly()
+    for event in pygame.event.get():
+        if event.type == QUIT: # like control-break in the console, or the cross in the top right corner of the window
+            quitElegantly()
+        elif event.type== KEYDOWN:
+            mods=pygame.key.get_mods()
+            if event.key== K_ESCAPE: # also quit on escape
+                quitElegantly()
+            elif (mods & KMOD_LALT or mods & KMOD_RALT) and event.key==K_F4:  #also quit on alt-f4
+                quitElegantly()
